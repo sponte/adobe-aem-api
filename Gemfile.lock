@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    adobe-aem-api (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adobe-aem-api!
+  bundler (~> 1.6)
+  rake
