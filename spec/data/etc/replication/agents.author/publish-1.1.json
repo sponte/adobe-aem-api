@@ -1,0 +1,25 @@
+{
+    "jcr:created": "Wed Aug 13 2014 09:05:55 GMT+0000",
+    "jcr:primaryType": "cq:Page",
+    "jcr:createdBy": "admin",
+    "jcr:content": {
+        "enabled": "true",
+        "jcr:description": "Agent that replicates to the default publish instance.",
+        "sling:resourceType": "cq/replication/components/agent",
+        "jcr:uuid": "24b0a1ed-79a1-4fd2-84b1-c3c7ac2b6f03",
+        "jcr:title": "Publish 1",
+        "jcr:mixinTypes": ["mix:versionable"],
+        "jcr:baseVersion": "db950b25-0639-49b0-a812-9b7388dda1e8",
+        "transportUser": "admin",
+        "jcr:isCheckedOut": true,
+        "jcr:primaryType": "nt:unstructured",
+        "cq:template": "/libs/cq/replication/templates/agent",
+        "jcr:predecessors": ["db950b25-0639-49b0-a812-9b7388dda1e8"],
+        "retryDelay": "60000",
+        "jcr:versionHistory": "9816f959-099e-49a5-af3e-8801de61ab83",
+        "logLevel": "info",
+        "transportPassword": "admin",
+        "transportUri": "http://azaem-pub1-test1.awsdev.telegraph.co.uk:4503/bin/receive?sling:authRequestLogin=1",
+        "serializationType": "durbo"
+    }
+}

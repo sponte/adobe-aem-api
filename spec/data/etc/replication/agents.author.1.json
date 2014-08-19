@@ -1,0 +1,39 @@
+{
+    "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+    "jcr:primaryType": "cq:Page",
+    "jcr:createdBy": "admin",
+    "jcr:content": {
+        "sling:resourceType": "cq/replication/components/agents",
+        "jcr:title": "Agents on author",
+        "jcr:primaryType": "nt:unstructured",
+        "cq:template": "/libs/cq/replication/templates/agents"
+    },
+    "publish-1": {
+        "jcr:created": "Wed Aug 13 2014 09:05:55 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    },
+    "publish-2": {
+        "jcr:created": "Wed Aug 13 2014 09:05:55 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    },
+    "publish_reverse": {
+        "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    },
+    "static": {
+        "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    },
+    "test_and_target": {
+        "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    },
+    "offloading_outbox": {"jcr:primaryType": "nt:unstructured"},
+    "offloading_853dfded-cdea-40d3-a0cc-22555e90feca": {"jcr:primaryType": "nt:unstructured"},
+    "offloading_reverse_853dfded-cdea-40d3-a0cc-22555e90feca": {"jcr:primaryType": "nt:unstructured"}
+}

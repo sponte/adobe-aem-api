@@ -1,9 +1,21 @@
-require "adobe/aem/api/version"
-
 module Adobe
   module Aem
-    module Api
-      # Your code goes here...
+    class Api
+      attr_reader :context
+
+      def initialize(options = {})
+        @context = Context.new
+        @context.configuration = Configuration.new(options)
+        @context.connector = Connector.new(@context)
+      end
+
+      def replication
+        Replication.new(@context)
+      end
+
+      def siteadmin
+        SiteAdmin.new(@context)
+      end
     end
   end
 end

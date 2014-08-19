@@ -1,0 +1,25 @@
+{
+    "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+    "sling:resourceType": "cq/replication/components/home",
+    "jcr:title": "Replication",
+    "jcr:createdBy": "admin",
+    "jcr:primaryType": "sling:OrderedFolder",
+    "treeactivation": {
+        "title": "Activate Tree",
+        "sling:resourceType": "cq/replication/components/treeactivation",
+        "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+        "jcr:title": "Activate Tree",
+        "jcr:primaryType": "sling:Folder",
+        "jcr:createdBy": "admin"
+    },
+    "agents.author": {
+        "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    },
+    "agents.publish": {
+        "jcr:created": "Wed Aug 13 2014 08:47:17 GMT+0000",
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin"
+    }
+}
