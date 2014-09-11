@@ -16,6 +16,10 @@ module Adobe
       def siteadmin
         SiteAdmin.new(@context)
       end
+
+      def system
+        System.new(@context)
+      end
     end
   end
 end
