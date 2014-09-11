@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    adobe-aem-api (0.0.1)
+    adobe-aem-api (0.0.2)
       nokogiri
       recursive-open-struct
 
