@@ -20,6 +20,10 @@ module Adobe
       def system
         System.new(@context)
       end
+
+      def crx
+        CrxSystem.new(@context)
+      end
     end
   end
 end

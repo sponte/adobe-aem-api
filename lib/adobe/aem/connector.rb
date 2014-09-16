@@ -34,9 +34,9 @@ module Adobe
         verify(response)
       end
 
-      def post(path, data, headers = {})
+      def post(path, data = {}, headers = {})
         post = request(path, 'POST')
-        post.form_data = data if data
+        post.form_data = data unless data.empty?
 
         response = http.request(post)
         verify(response)
