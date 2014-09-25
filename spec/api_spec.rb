@@ -38,8 +38,8 @@ module Adobe
       end
 
       it 'should return list of replication agents' do
-        subject.should have_at_least(2).agent_types
-        expect(subject).to have_at_least(1).agent_types
+        subject.should have_at_least(2).agents
+        expect(subject).to have_at_least(1).agents
 
         expect(subject.agents['agents.author']['publish-1']['jcr:content']['jcr:title']).to eq('Publish 1')
       end

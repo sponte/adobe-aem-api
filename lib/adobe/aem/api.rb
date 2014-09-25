@@ -3,26 +3,33 @@ module Adobe
     class Api
       attr_reader :context
 
+      class << self
+        def proxy(name, klass)
+          define_method name do
+            klass.new(@context)
+          end
+        end
+      end
+
       def initialize(options = {})
         @context = Context.new
         @context.configuration = Configuration.new(options)
         @context.connector = Connector.new(@context)
       end
 
-      def replication
-        Replication.new(@context)
-      end
+      require 'adobe/aem/replication'
+      proxy :replication, Replication
 
       def siteadmin
-        SiteAdmin.new(@context)
+        @siteadmin ||= SiteAdmin.new(@context)
       end
 
       def system
-        System.new(@context)
+        @system ||= System.new(@context)
       end
 
       def crx
-        CrxSystem.new(@context)
+        @crx ||= CrxSystem.new(@context)
       end
     end
   end

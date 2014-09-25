@@ -7,4 +7,8 @@ class MockAem < Sinatra::Application
 
   set :static, true
   set :public_folder, File.join(File.dirname(__FILE__), '../data')
+
+  post '/bin/wcmcommand' do
+    '<html><div id=Location href=/etc/replication/agents.author/stan /></html>'
+  end
 end
