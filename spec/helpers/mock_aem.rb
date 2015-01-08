@@ -12,7 +12,7 @@ class MockAem < Sinatra::Application
     '<html><div id=Location href=/etc/replication/agents.author/stan /></html>'
   end
 
-  get '/system/console/bundles/:id' do
+  get '/system/console/bundles/:id.json' do
     if params[:id] == 'uk.sponte.bundle'
       return "{}"
     end

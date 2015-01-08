@@ -26,7 +26,7 @@ module Adobe
       end
 
       def get_bundle(name)
-        @context.connector.get("/system/console/bundles/#{name}")
+        @context.connector.get("/system/console/bundles/#{name}.json")
       rescue Adobe::Aem::NotFound
         nil
       end
