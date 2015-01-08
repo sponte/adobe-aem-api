@@ -25,6 +25,12 @@ module Adobe
         @context.connector.post("/system/console/bundles/#{name}", action: 'refresh')
       end
 
+      def get_bundle(name)
+        @context.connector.get("/system/console/bundles/#{name}")
+      rescue Adobe::Aem::NotFound
+        nil
+      end
+
       def install_bundle(path)
         options = {
           action: :install,

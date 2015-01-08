@@ -1,5 +1,8 @@
 module Adobe
   module Aem
+
+    class NotFound < StandardError; end
+
     class Connector
       def initialize(context)
         @context = context
@@ -109,6 +112,7 @@ module Adobe
       end
 
       def verify(response)
+        raise Adobe::Aem::NotFound if response.is_a?(Net::HTTPNotFound)
         raise StandardError.new(response.class.to_s) unless
             [Net::HTTPOK, Net::HTTPCreated, Net::HTTPFound].include?(response.class)
 

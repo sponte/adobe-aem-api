@@ -62,6 +62,26 @@ module Adobe
         expect(JSON.parse(b)["action"]).to eq("uninstall")
       end
 
+      it "should stop a bundle" do
+        b = subject.stop_bundle("uk.sponte.bundle").body
+        expect(JSON.parse(b)["action"]).to eq("stop")
+      end
+
+      it "should start a bundle" do
+        b = subject.start_bundle("uk.sponte.bundle").body
+        expect(JSON.parse(b)["action"]).to eq("start")
+      end
+
+      it "should get a bundle" do
+        b = subject.get_bundle("uk.sponte.bundle")
+        expect(b).to_not be_nil
+      end
+
+      it "should get nil for non existent bundle" do
+        b = subject.get_bundle("uk.sponte.bundle.err")
+        expect(b).to be_nil
+      end
+
       it "should refresh_package_imports" do
         b = subject.refresh_bundle_imports("uk.sponte.bundle").body
         expect(JSON.parse(b)["action"]).to eq("refresh")
