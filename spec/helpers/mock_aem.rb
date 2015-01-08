@@ -11,4 +11,8 @@ class MockAem < Sinatra::Application
   post '/bin/wcmcommand' do
     '<html><div id=Location href=/etc/replication/agents.author/stan /></html>'
   end
+
+  post '/system/console/bundles/?:id?' do
+  	params.to_json
+  end
 end

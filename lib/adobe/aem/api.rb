@@ -1,3 +1,8 @@
+require 'adobe/aem/replication'
+require 'adobe/aem/site_admin'
+require 'adobe/aem/system'
+require 'adobe/aem/crx_system'
+
 module Adobe
   module Aem
     class Api
@@ -17,20 +22,11 @@ module Adobe
         @context.connector = Connector.new(@context)
       end
 
-      require 'adobe/aem/replication'
       proxy :replication, Replication
+      proxy :system, System
+      proxy :crx, CrxSystem
+      proxy :siteadmin, SiteAdmin
 
-      def siteadmin
-        @siteadmin ||= SiteAdmin.new(@context)
-      end
-
-      def system
-        @system ||= System.new(@context)
-      end
-
-      def crx
-        @crx ||= CrxSystem.new(@context)
-      end
     end
   end
 end

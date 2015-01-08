@@ -101,6 +101,8 @@ module Adobe
       def verify(response)
         raise StandardError.new(response.class.to_s) unless
             [Net::HTTPOK, Net::HTTPCreated, Net::HTTPFound].include?(response.class)
+
+        response
       end
 
       def parse_json(string)

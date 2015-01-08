@@ -5,11 +5,11 @@ module Adobe
     describe Api do
       describe 'Default values' do
         before(:all) do
-          @sinatra_app = MockAem.run
+          MockAem.run
         end
 
         after(:all) do
-          @sinatra_app.quit!
+          MockAem.quit!
         end
 
         subject do
@@ -47,6 +47,39 @@ module Adobe
       it 'should create agent' do
         subject.create_agent('agents.author', 'stan')
       end
+    end
+
+    describe "System" do
+      subject do
+        @options = {}
+        @options[:port] = 4567
+
+        Adobe::Aem::Api.new(@options).system
+      end
+
+      it "should uninstall a bundle" do
+        b = subject.uninstall_bundle("uk.sponte.bundle").body
+        expect(JSON.parse(b)["action"]).to eq("uninstall")
+      end
+
+      it "should refresh_package_imports" do
+        b = subject.refresh_bundle_imports("uk.sponte.bundle").body
+        expect(JSON.parse(b)["action"]).to eq("refresh")
+      end
+
+      it "should upload package" do
+        tempfile = Tempfile.new('upload_package.tmp')
+        tempfile.close
+
+        b = subject.install_bundle(tempfile.path).body
+
+        puts b
+
+        expect(JSON.parse(b)["action"]).to eq("install")
+
+        File.delete(tempfile.path)
+      end
+
     end
   end
 end
