@@ -76,7 +76,6 @@ module Adobe
         private
         def set(name, value)
           field_name = name.to_s.gsub(/=$/, '')
-          puts "Setting #{@path} #{field_name} to #{value}"
           @context.connector.set(@path, field_name, value)
         end
       end
