@@ -72,9 +72,6 @@ module Adobe
         tempfile.close
 
         b = subject.install_bundle(tempfile.path).body
-
-        puts b
-
         expect(JSON.parse(b)["action"]).to eq("install")
 
         File.delete(tempfile.path)

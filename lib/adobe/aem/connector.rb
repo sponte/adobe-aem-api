@@ -34,6 +34,12 @@ module Adobe
         verify(response)
       end
 
+      def multipart_post(path, data = {}, headers = {})
+        post = request(path, 'POST', data)
+        response = http.request(post)
+        verify(response)
+      end
+
       def post(path, data = {}, headers = {})
         post = request(path, 'POST')
         post.form_data = data unless data.empty?
@@ -78,15 +84,19 @@ module Adobe
       end
 
       private
-      def request(path, type='GET')
+      def request(path, type='GET', data = {})
         r = if type == 'GET'
               Net::HTTP::Get.new(path)
+            elsif !data.empty?
+              Net::HTTP::Post::Multipart.new(path, data)
             else
               Net::HTTP::Post.new(path)
             end
+
         r.basic_auth @context.configuration.username, @context.configuration.password
         r['Accept'] = 'application/json'
-        r['Content-Type'] = 'application/json'
+        r['Content-Type'] = 'application/json' unless r.is_a?(Net::HTTP::Post::Multipart)
+
         r
       end
 
